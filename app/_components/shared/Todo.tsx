@@ -1,7 +1,6 @@
 import { todoType } from '@/app/_types/types';
 import DeleteTodo from './DeleteTodo';
 import Status from './Status';
-import { getAllTodos } from '@/app/_lib/actions/todoActions';
 
 const Todo = async ({ todo, query }: { todo: todoType; query?: string }) => {
   const todoStyle = {
@@ -15,7 +14,7 @@ const Todo = async ({ todo, query }: { todo: todoType; query?: string }) => {
       style={todoStyle}
     >
       <Status todo={todo} />
-      <span className="text-center font-bold uppercase">{todo.title}</span>
+      <span className="text-center font-bold">{todo.title}</span>
       <div className="flex items-center gap-5">
         <DeleteTodo todo={todo} />
       </div>
