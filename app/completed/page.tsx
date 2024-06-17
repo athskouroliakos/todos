@@ -17,9 +17,7 @@ const page = async ({
     <div className=" flex flex-col items-center justify-center  w-full mt-10">
       {data?.map((todo, id) => (
         <div className="w-screen py-3 flex items-center flex-col" key={id}>
-          <Suspense>
-            <Todo todo={todo} query={query} />
-          </Suspense>
+          <Todo todo={todo} query={query} />
         </div>
       ))}
     </div>
