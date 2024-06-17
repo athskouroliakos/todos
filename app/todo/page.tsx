@@ -1,7 +1,7 @@
-import Todo from './_components/shared/Todo';
-import { getAllTodos } from './_lib/actions/todoActions';
+import Todo from '../_components/shared/Todo';
+import { getAllTodos, getStatus } from '../_lib/actions/todoActions';
 
-const Home = async ({
+const page = async ({
   searchParams,
 }: {
   searchParams?: {
@@ -10,7 +10,7 @@ const Home = async ({
   };
 }) => {
   const query = searchParams?.query || '';
-  const data = await getAllTodos(query);
+  const data = await getStatus(false, query);
 
   return (
     <div className=" flex flex-col items-center justify-center  w-full mt-10">
@@ -23,4 +23,4 @@ const Home = async ({
   );
 };
 
-export default Home;
+export default page;
