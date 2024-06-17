@@ -4,6 +4,7 @@ import '@/app/_styles/globals.css';
 import AddTodo from './_components/shared/AddTodo';
 import Navigation from './_components/shared/Navigation';
 import Search from './_components/shared/Search';
+import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +24,9 @@ export default function RootLayout({
         <div className=" w-screen py-20 flex items-center flex-col">
           <AddTodo />
           <Navigation />
-          <Search placeholder="Search for a todo..." />
+          <Suspense>
+            <Search placeholder="Search for a todo..." />
+          </Suspense>
           {children}
         </div>
       </body>
