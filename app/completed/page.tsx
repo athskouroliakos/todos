@@ -1,4 +1,3 @@
-
 import Todo from '../_components/shared/Todo';
 import { getAllTodos, getStatus } from '../_lib/actions/todoActions';
 

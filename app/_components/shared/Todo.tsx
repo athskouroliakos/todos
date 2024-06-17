@@ -3,7 +3,7 @@ import DeleteTodo from './DeleteTodo';
 import Status from './Status';
 import { getAllTodos } from '@/app/_lib/actions/todoActions';
 
-const Todo = async ({ todo }: { todo: todoType }) => {
+const Todo = async ({ todo, query }: { todo: todoType; query?: string }) => {
   const todoStyle = {
     textDecoration: todo.isCompleted === true ? 'line-through' : 'none',
     opacity: todo.isCompleted === true ? 0.5 : 1,
