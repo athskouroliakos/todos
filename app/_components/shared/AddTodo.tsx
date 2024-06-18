@@ -1,7 +1,7 @@
 import Form from '../ui/Form';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
-import { createTodo } from '@/app/_lib/actions/todoActions';
+import { createTodo } from '@/app/_lib/actions/actions';
 
 const AddTodo = () => {
   return (
