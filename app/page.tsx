@@ -1,5 +1,5 @@
 import Todo from './_components/shared/Todo';
-import { getAllTodos } from './_lib/actions/todoActions';
+import { getAllTodos } from './_lib/actions/actions';
 
 const Home = async ({
   searchParams,

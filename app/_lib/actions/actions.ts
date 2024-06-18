@@ -1,7 +1,5 @@
 'use server';
 
-import { revalidatePath } from 'next/cache';
-
 import { connectToDatabase } from '../_database';
 
 import TodoModel, { ITodo } from '../_database/models/todo.model';
@@ -16,8 +14,6 @@ export async function createTodo(formData: FormData) {
   } catch (error) {
     console.error('Error creating todo', error);
   }
-
-  revalidatePath('/');
 }
 
 export async function todoStatus(formData: FormData) {
@@ -35,8 +31,6 @@ export async function todoStatus(formData: FormData) {
     todo.isCompleted = !todo.isCompleted;
     await todo.save();
 
-    revalidatePath('/');
-
     return todo.isCompleted;
   } catch (error) {
     console.error('Error changing status:', error);
@@ -50,8 +44,6 @@ export async function deleteTodo(formData: FormData) {
     await connectToDatabase();
 
     await TodoModel.findByIdAndDelete(inputId);
-
-    revalidatePath('/');
   } catch (error) {
     console.error('Error deleting', error);
   }
@@ -92,6 +84,5 @@ export async function getStatus(isCompleted: boolean, query?: string) {
     return todos;
   } catch (error) {
     console.error('Error fetching todos by completion status:', error);
-    return [];
   }
 }
