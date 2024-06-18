@@ -29,7 +29,5 @@ services:
     # define the environment variables
     environment:
       # we're using MongoDB atlas so we need to pass in the connection string
-      MONGODB_URI:
-
 volumes:
   todo:
