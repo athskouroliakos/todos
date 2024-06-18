@@ -29,7 +29,7 @@ services:
     # define the environment variables
     environment:
       # we're using MongoDB atlas so we need to pass in the connection string
-      DB_URL: mongodb+srv://thanosmw2:Zyz0OwAoJtKzJPpl@cluster0.pq7qpir.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+      MONGODB_URI:
 
 volumes:
   todo:
