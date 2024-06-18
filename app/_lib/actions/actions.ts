@@ -12,7 +12,7 @@ export async function createTodo(formData: FormData) {
   try {
     await connectToDatabase();
 
-    const newTodo = await TodoModel.create({ title: input });
+    await TodoModel.create({ title: input });
   } catch (error) {
     console.error('Error creating todo', error);
   }
