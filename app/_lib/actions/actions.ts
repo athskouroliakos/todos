@@ -4,7 +4,7 @@ import { revalidatePath } from 'next/cache';
 
 import { connectToDatabase } from '../_database';
 
-import TodoModel, { ITodo } from '../_database/models/todo.model';
+import TodoModel from '../_database/models/todo.model';
 
 export async function createTodo(formData: FormData) {
   const input = formData.get('input') as string;
